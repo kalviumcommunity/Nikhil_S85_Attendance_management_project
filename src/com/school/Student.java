@@ -1,16 +1,18 @@
 package com.school;
 
 public class Student {
-    private int studentId;
-    private String name;
+    private static int nextStudentIdCounter = 1;
 
-    public void setDetails(int studentId, String name) {
-        this.studentId = studentId;
-        this.name = name;
+    int studentId;
+    String name;
+
+    // Constructor
+    public Student(String name) {
+        this.studentId = nextStudentIdCounter++; 
+        this.name = name;                      
     }
 
     public void displayDetails() {
-        System.out.println("Student ID: " + studentId);
-        System.out.println("Name: " + name);
+        System.out.println("Student ID: " + this.studentId + ", Name: " + this.name);
     }
 }
